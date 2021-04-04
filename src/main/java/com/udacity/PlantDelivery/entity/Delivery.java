@@ -3,11 +3,9 @@ package com.udacity.PlantDelivery.entity;
 import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Delivery {
@@ -26,5 +24,8 @@ public class Delivery {
     private Boolean completed;  // Y/N
 
     private LocalDateTime deliveryTime; // includes both date and time - simpler than having two separate fields
+
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "delivery")
+    private List<Plant> plantList;
 
 }
