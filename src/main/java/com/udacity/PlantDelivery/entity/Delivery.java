@@ -25,7 +25,7 @@ public class Delivery {
 
     private LocalDateTime deliveryTime; // includes both date and time - simpler than having two separate fields
 
-    @OneToMany(fetch=FetchType.LAZY,mappedBy = "delivery")
+    @OneToMany(fetch=FetchType.LAZY,mappedBy = "delivery", cascade = CascadeType.REMOVE)
     private List<Plant> plantList;
 
 
