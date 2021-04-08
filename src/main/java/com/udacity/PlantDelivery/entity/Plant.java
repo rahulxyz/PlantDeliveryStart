@@ -1,5 +1,6 @@
 package com.udacity.PlantDelivery.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
@@ -21,6 +22,14 @@ public class Plant {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="delivery_id")
     private Delivery delivery;
+
+    public Plant(){}
+
+    public Plant(String name, BigDecimal price) {
+        this.name= name;
+        this.price= price;
+    }
+
 
     public Long getId() {
         return id;

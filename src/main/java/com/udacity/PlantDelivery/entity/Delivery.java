@@ -1,10 +1,12 @@
 package com.udacity.PlantDelivery.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(name = "Delivery.findByName",
@@ -29,6 +31,13 @@ public class Delivery {
 
     @OneToMany(fetch=FetchType.LAZY,mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<Plant> plantList;
+
+    public Delivery(String recipient_name, String address, LocalDateTime time, Boolean completed) {
+        this.recipient_name=recipient_name;
+        this.address = address;
+        this.deliveryTime = time;
+        this.completed= completed;
+    }
 
 
     public Long getId() {
@@ -78,4 +87,5 @@ public class Delivery {
     public void setPlantList(List<Plant> plantList) {
         this.plantList = plantList;
     }
+
 }
