@@ -3,24 +3,24 @@ package com.udacity.PlantDelivery.projection;
 import java.math.BigDecimal;
 
 public class RecipientAndPrice {
-    private String recipientName;
+    private String recipient_name;
     private BigDecimal price;
 
     //You'll probably need a constructor like this so CriteriaBuilder can create
     public RecipientAndPrice(String recipientName, BigDecimal price) {
-        this.recipientName = recipientName;
+        this.recipient_name = recipientName;
         this.price = price;
     }
 
     public RecipientAndPrice() {
     }
 
-    public String getRecipientName() {
-        return recipientName;
+    public String getRecipient_name() {
+        return recipient_name;
     }
 
-    public void setRecipientName(String recipientName) {
-        this.recipientName = recipientName;
+    public void setRecipient_name(String recipient_name) {
+        this.recipient_name = recipient_name;
     }
 
     public BigDecimal getPrice() {

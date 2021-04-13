@@ -27,6 +27,6 @@ public class PlantService {
     }
 
     public Plant getPlantByName(String name){
-        return plantRepository.findByName(name);
+        return plantRepository.findOneByName(name);
     }
 }

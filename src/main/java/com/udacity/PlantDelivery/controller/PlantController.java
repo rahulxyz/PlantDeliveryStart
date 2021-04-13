@@ -26,7 +26,7 @@ public class PlantController {
 //
 
     @GetMapping("/filterByName/{name}")
-public Plant getFilteredPlant(@PathVariable String name){
+    public Plant getFilteredPlant(@PathVariable String name){
         return plantService.getPlantByName(name);
     }
 

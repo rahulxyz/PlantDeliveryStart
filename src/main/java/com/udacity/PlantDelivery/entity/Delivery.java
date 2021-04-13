@@ -1,6 +1,7 @@
 package com.udacity.PlantDelivery.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Type;
 
@@ -31,6 +32,10 @@ public class Delivery {
 
     @OneToMany(fetch=FetchType.LAZY,mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<Plant> plantList;
+
+    public Delivery(){
+
+    }
 
     public Delivery(String recipient_name, String address, LocalDateTime time, Boolean completed) {
         this.recipient_name=recipient_name;

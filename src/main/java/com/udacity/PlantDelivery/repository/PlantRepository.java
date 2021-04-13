@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.List;
 
+
 @Repository
 public interface PlantRepository extends JpaRepository<Plant, Long> {
     //check if a plant by this id exists where delivery has been completed
@@ -24,5 +25,6 @@ public interface PlantRepository extends JpaRepository<Plant, Long> {
     //we can do this entirely with the method name
     List<Plant> findByPriceLessThan(BigDecimal price);
 
-    Plant findByName(String name);
+
+    Plant findOneByName(String name);
 }
